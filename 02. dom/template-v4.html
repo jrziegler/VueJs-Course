@@ -1,0 +1,23 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <h1>{{ title }}</h1>
+  <h2>{{ sayHello() }}</h2>
+  <a v-bind:href="link">Google</a>
+</div>
+
+<script>
+    new Vue({
+	    el: '#app',
+        data: {
+            title: 'Using Vue.js',
+            link: 'http://google.de'
+        },
+        methods: {
+            sayHello: function() {
+                console.log(this.title)
+                return this.title
+            }
+        }
+    })
+</script>
