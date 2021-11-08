@@ -1,0 +1,47 @@
+<meta charset="UTF8">
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <ul>
+        <li v-for="(color, i) in colors"> [{{ ++i }}] - {{ color }}</li>
+    </ul>
+    <hr>
+    <template v-for="(color, i) in colors">
+        <h1> {{ color }} </h1>
+        <p> {{ i }} </p>
+    </template>
+    <hr>
+    <ul>
+        <li v-for="(person, i) in people">
+            <p>Person #{{ ++i }}</p>
+            <div v-for="(value, key, index) in person">
+                {{key}} = {{value}}
+            </div>
+            <hr>
+        </li>
+    </ul>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            colors: ['red', 'blue', 'yellow', 'green'],
+            people: [
+                {name: 'John', yearsOld: '22', weight: 75},
+                {name: 'Carl', yearsOld: '20', weight: 70},
+                {name: 'Anne', yearsOld: '23', weight: 65}
+            ]
+        }
+    })
+</script>
+
+<style>
+    ul {
+        list-style:none
+    }
+
+    h1, p {
+        display: inline-flex;
+    }
+</style>
